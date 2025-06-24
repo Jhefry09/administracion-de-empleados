@@ -31,8 +31,7 @@ public class ServletEmpleado extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
 	List<Empleado> info = new ModelEmpleado().mostrar();
 	request.setAttribute("datos", info);
 	request.getRequestDispatcher("ListaEmpleados.jsp").forward(request, response);
