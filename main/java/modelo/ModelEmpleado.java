@@ -22,10 +22,10 @@ public List<Empleado> mostrar(){
 			emp.setId_emp(rs.getInt(1));
 			emp.setNom_emp(rs.getString(2));
 			emp.setApe_emp(rs.getString(3));
-			emp.setDni(rs.getString(5));
-			emp.setDepartamento(rs.getString(6));
-			emp.setPuesto(rs.getString(7));
-			emp.setSueldo(rs.getInt(8));
+			emp.setDni(rs.getString(4));
+			emp.setDepartamento(rs.getString(5));
+			emp.setPuesto(rs.getString(6));
+			emp.setSueldo(rs.getInt(7));
 			datos.add(emp);
 		}
 	} catch (Exception e) {
