@@ -3,14 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/font-awesome.min.css">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>LOGIN DE ADMINISTRADORES</title>
 </head>
-<body>
+<body class="bg-dark">
 	<%
 	String msj_error = (String) request.getAttribute("error");
 	String sin_error = "";
@@ -19,24 +18,20 @@
 	}
 	%>
 	<form action="ServletAdministrador">
-		<fieldset>
-			<h1 align="center" class="h1-white">LOGIN DE ADMINISTRADORES</h1>
-			<table border="1" style="padding: 2px;" align="center" class="table table-dark table-striped">
+			<p class="text-white text-center fs-1 fw-bolder">LOGIN DE ADMINISTRADORES</p>
+			<table border="1" class="table table-dark table-striped ">
 				<tr>
-					<td>USUARIO:</td>
-					<td><input type="text" name="txtUsuario" required></td>
+					<td><input type="text" class="form-control bg-dark text-white border-4" placeholder="INGRESE EL USUARIO" name="txtUsuario" required></td>
 				</tr>
 				<tr>
-					<td>CONTRASEÑA:</td>
-					<td><input type="password" name="txtClave" required></td>
+					<td><input type="password" class="form-control bg-dark text-white border-4" placeholder="INGRESE LA CONTRASEÑA" name="txtClave" required></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="right"><input type="submit"
-						value="Enviar" style="margin-right: 10px;"></td>
+						value="Enviar" style="margin-right: 10px; " class="btn btn-outline-light btn-lg d-grid mx-auto  col-6"></td>
 				</tr>
 			</table>
-			<h4 style="color: red;"><%=sin_error %></h4>
-		</fieldset>
+			<p class="text-danger text-center fs-3 fw-bold" ><%=sin_error %></p>
 	</form>
 </body>
 </html>
