@@ -3,6 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -16,14 +20,14 @@
 	%>
 	<form action="ServletAdministrador">
 		<fieldset>
-			<legend>LOGIN DE ADMINISTRADORES</legend>
-			<table border="1" style="padding: 2px;" align="center">
+			<h1 align="center" class="h1-white">LOGIN DE ADMINISTRADORES</h1>
+			<table border="1" style="padding: 2px;" align="center" class="table table-dark table-striped">
 				<tr>
-					<td>Usuario:</td>
+					<td>USUARIO:</td>
 					<td><input type="text" name="txtUsuario" required></td>
 				</tr>
 				<tr>
-					<td>Contraseña:</td>
+					<td>CONTRASEÑA:</td>
 					<td><input type="password" name="txtClave" required></td>
 				</tr>
 				<tr>
