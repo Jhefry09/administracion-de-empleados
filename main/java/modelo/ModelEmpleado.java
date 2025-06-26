@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import controlador.ServletEmpleado;
 import entidad.Empleado;
 import utils.MySQLDBConexion;
 
@@ -32,4 +33,75 @@ public List<Empleado> mostrar(){
 		e.printStackTrace();
 	}return datos;
 }
+public List<Empleado> BuscarEmpleado(String datoBuscar, String tipo) {
+	List<Empleado> datos = new ArrayList<Empleado>();
+	String sql = "SELECT * FROM empleados WHERE "+ tipo +"=?";
+	try {
+		Connection con = MySQLDBConexion.getConexion();
+		PreparedStatement pstm = con.prepareStatement(sql);
+		pstm.setString(1, datoBuscar);
+		ResultSet rs = pstm.executeQuery();
+	while (rs.next()) {
+		Empleado emp = new Empleado();
+		emp.setId_emp(rs.getInt(1));
+		emp.setNom_emp(rs.getString(2));
+		emp.setApe_emp(rs.getString(3));
+		emp.setDni(rs.getString(4));
+		emp.setDepartamento(rs.getString(5));
+		emp.setPuesto(rs.getString(6));
+		emp.setSueldo(rs.getInt(7));
+		datos.add(emp);
+	}	
+	}catch (Exception e) {
+		e.printStackTrace();
+	}return datos;
 }
+public List<Empleado> BuscarEmpleadocod(Integer datoBuscar) {	
+	List<Empleado> datos = new ArrayList<Empleado>();
+	String sql = "SELECT * FROM empleados WHERE id_emp=?";
+	try {
+		Connection con = MySQLDBConexion.getConexion();
+		PreparedStatement pstm = con.prepareStatement(sql);
+		pstm.setInt(1, datoBuscar);
+		ResultSet rs = pstm.executeQuery();
+		while(rs.next()) {
+		Empleado emp = new Empleado();
+		emp.setId_emp(rs.getInt(1));
+		emp.setNom_emp(rs.getString(2));
+		emp.setApe_emp(rs.getString(3));
+		emp.setDni(rs.getString(4));
+		emp.setDepartamento(rs.getString(5));
+		emp.setPuesto(rs.getString(6));
+		emp.setSueldo(rs.getInt(7));
+		datos.add(emp);
+	}	
+	}catch (Exception e) {
+		e.printStackTrace();
+	}return datos;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
