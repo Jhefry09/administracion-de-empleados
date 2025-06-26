@@ -38,8 +38,7 @@ public class ServletAdministrador extends HttpServlet {
 		request.setAttribute("error", "Usuario o clave incorrectos");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}else {
-		request.setAttribute("usu", login);
-		request.getRequestDispatcher("ServletEmpleado").forward(request, response);
+		response.sendRedirect("ServletEmpleado?seleccion=Lista");
 	}
 	}}
 
