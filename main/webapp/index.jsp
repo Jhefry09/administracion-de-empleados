@@ -21,14 +21,14 @@
 			<p class="text-white text-center fs-1 fw-bolder">LOGIN DE ADMINISTRADORES</p>
 			<table border="1" class="table table-dark table-striped ">
 				<tr>
-					<td><input type="text" class="bg-dark text-white border-4" placeholder="INGRESE EL USUARIO" name="txtUsuario" required></td>
+					<td><input type="text" class="form-control bg-dark text-white border-4" placeholder="INGRESE EL USUARIO" name="txtUsuario" required></td>
 				</tr>
 				<tr>
-					<td><input type="password" class="bg-dark text-white border-4" placeholder="INGRESE LA CONTRASEÑA" name="txtClave" required></td>
+					<td><input type="password" class="form-control bg-dark text-white border-4" placeholder="INGRESE LA CONTRASEÑA" name="txtClave" required></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="right"><input type="submit"
-						value="Enviar" class="btn btn-outline-light btn-lg d-grid mx-auto  col-6"></td>
+						value="Enviar" style="margin-right: 10px;"  class="btn btn-outline-light btn-lg d-grid mx-auto  col-6"></td>
 				</tr>
 			</table>
 			<p class="text-danger text-center fs-3 fw-bold" ><%=sin_error %></p>
