@@ -50,7 +50,7 @@
 					</div>
 					<div class="d-flex align-items-center">
 					<div>
-					<button type="submit" class="btn btn-outline-light btn-md fw-bolder border-4 d-flex align-items-center"><i class="bi bi-search"></i> BUSCAR</button>
+					<button type="submit" class="btn btn-outline-light btn-md fw-bolder border-4 d-flex align-items-center"><i class="bi bi-search"></i>BUSCAR</button>
 						</div>
 					</div>
 				</form>
@@ -62,7 +62,8 @@
 						class="btn btn-outline-light btn-md fw-bolder border-4"
 						><i class="bi bi-arrow-clockwise"></i> ACTUALIZAR</button>
 				</form>
-				<form action="ServletEmpleado?seleccion=agregar">
+				<form action="ServletEmpleado">
+				<input type="hidden" name="seleccion" value="agregar">
 					<button type="submit"
 						class="btn btn-outline-light btn-md fw-bolder border-4"
 						><i class="bi bi-person-plus-fill"></i> AGREGAR EMPLEADO</button>
@@ -82,6 +83,7 @@
 				<th scope="col">DEPARTAMENTO</th>
 				<th scope="col">PUESTO</th>
 				<th scope="col">SUELDO</th>
+				<th scope="col">EDITAR</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -89,7 +91,7 @@
 			if (datos != null) {
 				for (Empleado dat : datos) {
 			%>
-			<tr class="text-center animate__animated animate__fadeInDown table-responsive">
+			<tr class="text-center align-middle align-items-center animate__animated animate__fadeInDown table-responsive">
 				<td scope="row">#<%=dat.getId_emp()%></td>
 				<td><%=dat.getNom_emp()%></td>
 				<td><%=dat.getApe_emp()%></td>
@@ -97,6 +99,17 @@
 				<td><%=dat.getDepartamento()%></td>
 				<td><%=dat.getPuesto()%></td>
 				<td><%=dat.getSueldo()%></td>
+				<td class="gap-2 d-flex align-items-center justify-content-center" >
+				<form action="ServletEmpleado">
+				<input type="hidden" name="seleccion" value="editar">
+				<button class="btn btn-outline-light btn-lg"><i class="bi bi-person-fill-gear"></i></button>
+				</form>
+				<form action="ServletEmpleado">
+				<input type="hidden" name="seleccion" value="borrar">
+				<input type="hidden" name="codigo" value="<%=dat.getId_emp()%>">
+				<button class="btn btn-outline-light btn-lg"><i class="bi bi-person-fill-dash"></i></button>
+				</form>
+				</td>				
 			</tr>
 			<%
 			}
