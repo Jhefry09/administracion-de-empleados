@@ -43,12 +43,35 @@ public class ServletEmpleado extends HttpServlet {
 				buscar(request, response);
 			}
 			break;
+		case "agregar":
+			agregar(request, response);
+			break;
+		case "editar":
+			editar(request, response);
+			break;
+		case "borrar":
+			borrar(request, response);
+			break;
 		case "Lista":
 			Lista(request, response);
 			break;
 		}
 	}
-
+	protected void editar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+	}
+	protected void borrar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int codigo = Integer.parseInt(request.getParameter("codigo"));
+		memp.BorrarEmpleado(codigo);
+		System.out.println(codigo);
+		Lista(request,response);
+	}
+	protected void agregar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+	}
 	protected void buscar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String tipo = request.getParameter("tipo");
