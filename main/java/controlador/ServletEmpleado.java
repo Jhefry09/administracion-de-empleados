@@ -31,61 +31,55 @@ public class ServletEmpleado extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-    String selec = request.getParameter("seleccion");
-    String dato = request.getParameter("buscar");
-    switch (selec) {
-	case "buscarcodi":
-		if (dato== null ||  dato.trim().isEmpty()) {
-			Lista(request,response);	
-		}else {
-			buscar(request,response);			
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String selec = request.getParameter("seleccion");
+		String dato = request.getParameter("buscar");
+		switch (selec) {
+		case "buscarcodi":
+			if (dato == null || dato.trim().isEmpty()) {
+				Lista(request, response);
+			} else {
+				buscar(request, response);
+			}
+			break;
+		case "Lista":
+			Lista(request, response);
+			break;
 		}
-		
-		break;
-	
-	case "Lista":
-		Lista(request,response);
-		break;
 	}
-    }
-	protected void buscar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	String tipo = request.getParameter("tipo");
-	String dato = request.getParameter("buscar");
-	String valor = "";
-	System.out.println(tipo);
-	System.out.println(dato);
-	switch (tipo) {
-	case "NOMBRE":
-		valor = "nom_emp";
-		break;
-	case "APELLIDO":
-		valor = "ape_emp";
-		break;
-	case "DNI":
-		valor = "dni";
-		break;
-	default:
-		buscarcod(request, response);
-		return;
-	}
-	List<Empleado> info = new ModelEmpleado().BuscarEmpleado(dato, valor);
-	System.out.println(info);
-	request.setAttribute("datos", info);
-	request.getRequestDispatcher("ListaEmpleados.jsp").forward(request, response);
-	}
-	
-	protected void buscarcod(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Integer dato = Integer.parseInt(request.getParameter("buscar"));
-		List<Empleado> emple = new ModelEmpleado().BuscarEmpleadocod(dato);
-		request.setAttribute("datos", emple);
+
+	protected void buscar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String tipo = request.getParameter("tipo");
+		String dato = request.getParameter("buscar");
+		String valor = "";
+		System.out.println(tipo);
+		System.out.println(dato);
+		switch (tipo) {
+		case "NOMBRE":
+			valor = "nom_emp";
+			break;
+		case "APELLIDO":
+			valor = "ape_emp";
+			break;
+		case "DNI":
+			valor = "dni";
+			break;
+		default:
+			valor = "id_emp";
+			break;
+		}
+		List<Empleado> info = new ModelEmpleado().BuscarEmpleado(dato, valor);
+		System.out.println(info);
+		request.setAttribute("datos", info);
 		request.getRequestDispatcher("ListaEmpleados.jsp").forward(request, response);
-			
 	}
-	
-	protected void Lista(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-	List<Empleado> info = new ModelEmpleado().mostrar();
-	request.setAttribute("datos", info);
-	request.getRequestDispatcher("ListaEmpleados.jsp").forward(request, response);
+
+	protected void Lista(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		List<Empleado> info = new ModelEmpleado().mostrar();
+		request.setAttribute("datos", info);
+		request.getRequestDispatcher("ListaEmpleados.jsp").forward(request, response);
 	}
 }
