@@ -59,6 +59,19 @@ public class ModelEmpleado {
 		}
 		return datos;
 	}
+	public int BorrarEmpleado(Integer datoEliminar) {
+		int eliminar = -1;
+		String sql = "DELETE FROM empleados WHERE id_emp=?";
+		try {
+			Connection con = MySQLDBConexion.getConexion();
+			PreparedStatement pstm = con.prepareStatement(sql);
+			pstm.setInt(1, datoEliminar);
+			eliminar = pstm.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return eliminar;
+	}
 }
 
 
