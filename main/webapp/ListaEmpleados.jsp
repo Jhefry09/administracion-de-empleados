@@ -50,13 +50,11 @@
 					</div>
 					<div class="d-flex align-items-center">
 					<div>
-					<button type="submit" class="btn btn-outline-light btn-md fw-bolder border-4"><i class="bi bi-search"></i> BUSCAR</button>
+					<button type="submit" class="btn btn-outline-light btn-md fw-bolder border-4 d-flex align-items-center"><i class="bi bi-search"></i> BUSCAR</button>
 						</div>
 					</div>
 				</form>
-				
 				</div>
-|
 			<div class="col mx-3 d-flex gap-2 flex-row-reverse align-items-center">
 			<form action="ServletEmpleado?seleccion=Lista">
 			<input type="hidden" name="seleccion" value="Lista">
