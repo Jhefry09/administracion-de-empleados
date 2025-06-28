@@ -60,6 +60,9 @@ public class ServletEmpleado extends HttpServlet {
 	protected void editar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Lista(request, response);
+		
+		
+		
 	}
 	protected void borrar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -71,6 +74,9 @@ public class ServletEmpleado extends HttpServlet {
 	protected void agregar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		Lista(request, response);
+		
+		
+		
 	}
 	protected void buscar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

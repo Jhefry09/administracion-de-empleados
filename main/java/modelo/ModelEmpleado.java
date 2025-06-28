@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import controlador.ServletEmpleado;
 import entidad.Empleado;
 import utils.MySQLDBConexion;
 
