@@ -71,8 +71,47 @@ public class ModelEmpleado {
 		}
 		return eliminar;
 	}
+	public int EditarEmpleado(Empleado emp) {
+		int editar = -1;
+		String sql = "UPDATE empleados SET nom_emp=?, ape_emp=?, dni=?, departamento=?, puesto=?, sueldo=? WHERE id_emp=?";
+		try {
+			Connection con = MySQLDBConexion.getConexion();
+			PreparedStatement pstm = con.prepareStatement(sql);
+			pstm.setString(1, emp.getNom_emp());
+			pstm.setString(2, emp.getApe_emp());
+			pstm.setString(3, emp.getDni());
+			pstm.setString(4, emp.getDepartamento());
+			pstm.setString(5, emp.getPuesto());
+			pstm.setInt(6, emp.getSueldo());
+			pstm.setInt(7, emp.getId_emp());
+			editar = pstm.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}return editar;
+	}
+	public Empleado btnEditar(int cod) {
+		String sql = "SELECT * FROM empleados WHERE id_emp=?";
+		Empleado emp = null;
+		try {
+			Connection con = MySQLDBConexion.getConexion();
+			PreparedStatement pstm = con.prepareStatement(sql);
+			pstm.setInt(1, cod);
+			ResultSet rs = pstm.executeQuery();
+			if (rs.next()) {
+				emp = new Empleado();
+				emp.setId_emp(rs.getInt(1));
+				emp.setNom_emp(rs.getString(2));
+				emp.setApe_emp(rs.getString(3));
+				emp.setDni(rs.getString(4));
+				emp.setDepartamento(rs.getString(5));
+				emp.setPuesto(rs.getString(6));
+				emp.setSueldo(rs.getInt(7));
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}return emp;
 }
-
+}
 
 
 
