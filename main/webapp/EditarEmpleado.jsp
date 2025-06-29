@@ -89,18 +89,39 @@
 							class="form-control text-center bg-dark text-white border-4"
 							value="<%=dat.getSueldo()%>"></td>
 					</tr>
-					<tr class="text-center ">
+					<tr class="text-center">
 						<td colspan="2"><input type="hidden" name="seleccion"
 							value="editar">
-							<button type="submit"
+							<button type="button"
 								class="text-center btn btn-outline-light btn-md border-4 mx-auto col-6"
-								data-bs-toggle="modal" data-bs-target="guardar">
+								data-bs-toggle="modal" data-bs-target="#guardar">
 								<i class="bi bi-floppy2"></i> GUARDAR
-							</button></td>
+							</button>
+							<div class="modal fade" id="guardar" tabindex="-1"
+								aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content  bg-dark">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalLabel">CONFIRMACIÓN</h5>
+											<button type="button" class="btn-close btn-close-white btn-light"
+												data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">SEGURO QUE QUIERE GUARDAR???</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary"
+												data-bs-dismiss="modal">CANCELAR</button>
+											<button type="submit"
+												class="btn btn-outline-light btn-md border-4">ACEPTAR</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							</td>
 					</tr>
 				</tbody>
 			</table>
 		</form>
 	</div>
+
 </body>
 </html>
