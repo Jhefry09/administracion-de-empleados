@@ -26,13 +26,15 @@
 	Empleado dat = (Empleado) request.getAttribute("datos");
 	%>
 	<div class="container my-3 position-relative">
-	<div class="position-absolute start-0">
-	<form action="ServletEmpleado" class=" mx-5">
-	<input type="hidden" name="seleccion" value="Lista">
-	<button class="btn btn-outline-light btn-md border-4"><i class="bi bi-caret-left-fill"></i> REGRESAR</button>
-	</form>
-	</div>
-	<p class="text-white text-center fs-1 fw-bolder">EDITAR DATOS</p>
+		<div class="position-absolute start-0">
+			<form action="ServletEmpleado" class=" mx-5">
+				<input type="hidden" name="seleccion" value="Lista">
+				<button class="btn btn-outline-light btn-md border-4">
+					<i class="bi bi-caret-left-fill"></i> REGRESAR
+				</button>
+			</form>
+		</div>
+		<p class="text-white text-center fs-1 fw-bolder">EDITAR DATOS</p>
 	</div>
 	<br>
 	<div class="container">
@@ -53,39 +55,48 @@
 					</tr>
 					<tr class="text-center">
 						<td>NOMBRE</td>
-						<td><input type="text" name="nom" class="form-control text-center bg-dark text-white border-4"
+						<td><input type="text" name="nom"
+							class="form-control text-center bg-dark text-white border-4"
 							value="<%=dat.getNom_emp()%>"></td>
 					</tr>
 					<tr>
 						<td>APELLIDO</td>
-						<td><input type="text" name="ape" class="form-control text-center bg-dark text-white border-4"
+						<td><input type="text" name="ape"
+							class="form-control text-center bg-dark text-white border-4"
 							value="<%=dat.getApe_emp()%>"></td>
 					</tr>
 					<tr>
 						<td>DNI</td>
-						<td><input type="text" name="dni" class="form-control text-center bg-dark text-white border-4"
+						<td><input type="text" name="dni"
+							class="form-control text-center bg-dark text-white border-4"
 							value="<%=dat.getDni()%>"></td>
 					</tr>
 					<tr>
 						<td>DEPARTAMENTO</td>
-						<td><input type="text" name="depa" class="form-control text-center bg-dark text-white border-4"
+						<td><input type="text" name="depa"
+							class="form-control text-center bg-dark text-white border-4"
 							value="<%=dat.getDepartamento()%>"></td>
 					</tr>
 					<tr>
 						<td>PUESTO</td>
-						<td><input type="text" name="pues" class="form-control text-center bg-dark text-white border-4"
+						<td><input type="text" name="pues"
+							class="form-control text-center bg-dark text-white border-4"
 							value="<%=dat.getPuesto()%>"></td>
 					</tr>
 					<tr>
 						<td>SUELDO</td>
-						<td><input type="text" name="suel" class="form-control text-center bg-dark text-white border-4"
+						<td><input type="text" name="suel"
+							class="form-control text-center bg-dark text-white border-4"
 							value="<%=dat.getSueldo()%>"></td>
 					</tr>
-					<tr class="text-end">
-						<td colspan="2">
-						<input type="hidden" name="seleccion" value="editar">
-						<button type="submit" class="btn btn-outline-light btn-md border-4"><i class="bi bi-floppy2"></i> GUARDAR</button>
-						</td>
+					<tr class="text-center ">
+						<td colspan="2"><input type="hidden" name="seleccion"
+							value="editar">
+							<button type="submit"
+								class="text-center btn btn-outline-light btn-md border-4 mx-auto col-6"
+								data-bs-toggle="modal" data-bs-target="guardar">
+								<i class="bi bi-floppy2"></i> GUARDAR
+							</button></td>
 					</tr>
 				</tbody>
 			</table>
