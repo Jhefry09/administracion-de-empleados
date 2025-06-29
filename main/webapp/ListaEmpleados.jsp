@@ -107,8 +107,8 @@
 				</form>
 				<form action="ServletEmpleado">
 				<input type="hidden" name="seleccion" value="borrar">
-				<input type="hidden" name="codigo" value="<%=dat.getId_emp()%>">
-				<button class="btn btn-outline-light btn-lg"><i class="bi bi-person-fill-dash"></i></button>
+				<input type="hidden" name="codigo"value="<%=dat.getId_emp()%>">
+				<button class="btn btn-outline-light btn-lg" ><i class="bi bi-person-fill-dash"></i></button>
 				</form>
 				</td>				
 			</tr>
