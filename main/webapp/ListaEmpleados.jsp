@@ -23,7 +23,7 @@
 <meta charset="UTF-8">
 <title>LISTA DE EMPLEADOS</title>
 </head>
-<body class="bg-dark">
+<body class="bg-dark animate__animated animate__lightSpeedInRight">
 	<%
 	List<Empleado> datos = (List<Empleado>) request.getAttribute("datos");
 	%>
@@ -91,7 +91,7 @@
 			if (datos != null) {
 				for (Empleado dat : datos) {
 			%>
-			<tr class="text-center align-middle align-items-center animate__animated animate__fadeInDown table-responsive">
+			<tr class="text-center align-middle align-items-center animate__animated animate__fadeInDown animate__delay-1s table-responsive">
 				<td scope="row">#<%=dat.getId_emp()%></td>
 				<td><%=dat.getNom_emp()%></td>
 				<td><%=dat.getApe_emp()%></td>
@@ -101,7 +101,8 @@
 				<td><%=dat.getSueldo()%></td>
 				<td class="gap-2 d-flex align-items-center justify-content-center" >
 				<form action="ServletEmpleado">
-				<input type="hidden" name="seleccion" value="editar">
+				<input type="hidden" name="seleccion" value="btnEditar">
+				<input type="hidden" name="idEditar" value="<%=dat.getId_emp()%>">
 				<button class="btn btn-outline-light btn-lg"><i class="bi bi-person-fill-gear"></i></button>
 				</form>
 				<form action="ServletEmpleado">
