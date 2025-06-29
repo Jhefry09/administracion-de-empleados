@@ -72,7 +72,7 @@
 	</div>
 	<br>
 	<div class="table-responsive">
-	<table border="1" class="table table-responsive table-dark table-striped table-hover animate__fadeInDown">
+	<table border="1" class="table table-responsive table-dark table-striped table-hover">
 
 		<thead>
 			<tr class="text-center">
