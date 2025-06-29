@@ -55,14 +55,34 @@ public class ServletEmpleado extends HttpServlet {
 		case "Lista":
 			Lista(request, response);
 			break;
+		case "btnEditar":
+			btnEditar(request, response);
+			break;
 		}
 	}
 	protected void editar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Lista(request, response);
-		
-		
-		
+		Empleado emp = new Empleado();
+		int id = Integer.parseInt(request.getParameter("id")); 
+		String nom = request.getParameter("nom");		
+		String ape = request.getParameter("ape");		
+		String dni = request.getParameter("dni");		
+		String depa = request.getParameter("depa");		
+		String pues = request.getParameter("pues");
+		int suel = Integer.parseInt(request.getParameter("suel"));
+		emp.setId_emp(id);
+		emp.setNom_emp(nom);
+		emp.setApe_emp(ape);
+		emp.setDni(dni);
+		emp.setDepartamento(depa);
+		emp.setPuesto(pues);
+		emp.setSueldo(suel);
+		int editar = memp.EditarEmpleado(emp);
+		if (editar != -1) {
+			Lista(request, response);
+		}else {
+			System.out.println("error al editar");
+		}
 	}
 	protected void borrar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -77,6 +97,13 @@ public class ServletEmpleado extends HttpServlet {
 		
 		
 		
+	}
+	protected void btnEditar(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("idEditar"));
+		Empleado emp = memp.btnEditar(id);
+		request.setAttribute("datos", emp);
+		request.getRequestDispatcher("EditarEmpleado.jsp").forward(request, response);
 	}
 	protected void buscar(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
