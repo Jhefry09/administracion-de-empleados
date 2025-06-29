@@ -40,7 +40,7 @@
 				</tr>
 				<tr>
 					<td colspan="2" align="right"><input type="submit"
-						value="Enviar" style="margin-right: 10px;"  class="btn btn-outline-light btn-lg d-grid mx-auto  col-6"></td>
+						value="Enviar" class="btn btn-outline-light btn-lg d-grid mx-auto col-6"></td>
 				</tr>
 			</table>
 			<p class="text-danger text-center fs-3 fw-bold" ><%=sin_error %></p>
