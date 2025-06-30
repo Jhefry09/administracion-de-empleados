@@ -19,7 +19,8 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 	crossorigin="anonymous"></script>
-<title>Insert title here</title>
+<link rel="icon" href="img/editar.ico" type="image/x-icon">
+<title>EDITANDO DATOS</title>
 </head>
 <body class="bg-dark animate__animated animate__backInDown">
 	<%
