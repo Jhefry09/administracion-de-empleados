@@ -111,6 +111,23 @@ public class ModelEmpleado {
 			e.printStackTrace();
 		}return emp;
 }
+	public int AgregarEmpleado(Empleado emp) {
+	int editar = -1;
+	String sql = "INSERT INTO empleados VALUES(null,?,?,?,?,?,?)";
+	try {
+		Connection con = MySQLDBConexion.getConexion();
+		PreparedStatement pstm = con.prepareStatement(sql);
+		pstm.setString(1, emp.getNom_emp());
+		pstm.setString(2, emp.getApe_emp());
+		pstm.setString(3, emp.getDni());
+		pstm.setString(4, emp.getDepartamento());
+		pstm.setString(5, emp.getPuesto());
+		pstm.setInt(6, emp.getSueldo());
+		editar = pstm.executeUpdate();
+	} catch (Exception e) {
+		e.printStackTrace();
+	}return editar;
+}
 }
 
 
