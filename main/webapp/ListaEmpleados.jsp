@@ -21,6 +21,7 @@
 	crossorigin="anonymous"></script>
 
 <meta charset="UTF-8">
+<link rel="icon" href="img/persona.ico" type="image/x-icon">
 <title>LISTA DE EMPLEADOS</title>
 </head>
 <body class="bg-dark animate__animated animate__lightSpeedInRight">
@@ -30,8 +31,8 @@
 	<div class=" align-items-center text-center">
 	<p class="text-white fs-1 text-center fw-bolder">LISTA DE EMPLEADOS</p>
 	</div>
-	<div class=" row d-flex" >
-			<div class="col mx-3">
+	<div class=" row d-flex mx-3" >
+			<div class="col">
 				<form class="d-flex gap-2 align-items-center" action="ServletEmpleado" >
 				<input type="hidden" name="seleccion" value="buscarcodi" >
 					<div class="d-flex gap-2">
@@ -62,12 +63,11 @@
 						class="btn btn-outline-light btn-md fw-bolder border-4"
 						><i class="bi bi-arrow-clockwise"></i> ACTUALIZAR</button>
 				</form>
-				<form action="ServletEmpleado">
-				<input type="hidden" name="seleccion" value="agregar">
-					<button type="submit"
+				<div>
+					<a href="AgregarEmpleado.jsp"><button type="submit"
 						class="btn btn-outline-light btn-md fw-bolder border-4"
-						><i class="bi bi-person-plus-fill"></i> AGREGAR EMPLEADO</button>
-				</form></div>
+						> <i class="bi bi-person-plus-fill"></i> AGREGAR EMPLEADO</button></a>
+				</div></div>
 	
 	</div>
 	<br>
