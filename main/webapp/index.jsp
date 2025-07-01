@@ -33,10 +33,10 @@
 			<p class="text-white text-center fs-1 fw-bolder">LOGIN DE ADMINISTRADORES</p>
 			<table border="1" class="table table-dark table-striped table-responsive">
 				<tr>
-					<td><input type="text" class="form-control animate__animated animate__rubberBand animate__delay-1s bg-dark text-white border-4" placeholder="INGRESE EL USUARIO" name="txtUsuario" required></td>
+					<td><input type="text" class="form-control animate__delay-1s bg-dark text-white border-4" placeholder="INGRESE EL USUARIO" name="txtUsuario" required></td>
 				</tr>
 				<tr>
-					<td><input type="password" class="form-control animate__animated animate__rubberBand animate__delay-1s bg-dark text-white border-4" placeholder="INGRESE LA CONTRASEÑA" name="txtClave" required></td>
+					<td><input type="password" class="form-control bg-dark text-white border-4" placeholder="INGRESE LA CONTRASEÑA" name="txtClave" required></td>
 				</tr>
 				<tr>
 					<td colspan="2" align="right"><input type="submit"
