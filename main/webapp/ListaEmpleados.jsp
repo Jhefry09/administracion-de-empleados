@@ -72,7 +72,7 @@
 	</div>
 	<br>
 	<div class="table-responsive">
-	<table border="1" class="table table-responsive table-dark table-striped table-hover">
+	<table class="table table-responsive table-dark table-striped table-hover table-bordered">
 
 		<thead>
 			<tr class="text-center">
@@ -86,7 +86,7 @@
 				<th scope="col">EDITAR</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="table-bordered">
 			<%
 			if (datos != null) {
 				for (Empleado dat : datos) {
